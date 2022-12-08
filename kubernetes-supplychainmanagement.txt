@@ -1,0 +1,40 @@
+Supplier-Service:
+
+
+docker build -t supplier-service .
+docker tag supplier-service arvinth97/supplier-service:latest
+docker push arvinth97/supplier-service:latest
+
+minikube start
+kubectl apply -f deployment.yaml
+kubectl get deployments
+minikube service spring-supplier-service
+minikube dashboard
+
+Retailer=service:
+
+docker build -t retailer-service .
+docker tag retailer-service arvinth97/retailer-service:latest
+docker push arvinth97/retailer-service:latest
+
+Inventory-service:
+
+docker build -t inventory-service .
+docker tag inventory-service arvinth97/inventory-service:latest
+docker push arvinth97/inventory-service:latest
+
+Order-service:
+
+docker build -t order-service .
+docker tag order-service arvinth97/order-service:latest
+docker push arvinth97/order-service:latest
+
+EUREKA-SERVICE:
+
+docker build -t eureka-service .
+
+
+
+
+
+
